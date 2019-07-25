@@ -1,34 +1,30 @@
 public class PairDTO {
     private String typeOfColumn;
-    /*
-     * <kut:KUTDataGridColumn /> - grid (headerText, dataField, textAlign, visible, editable, enabled)
-     * <kut:KUTTextInput /> - text (id, labelText, visible, enabled, textAlign
-     * <kut:KUTRadioGroupBox /> - radio (id)
-     * <kut:KUTDateField /> - date (id, labelText)
-     * <code:CprSeCdDropDownList /> - combo (id, labelText, visible)
-     * <<kut:KUTTextArea /> - textarea (id, labelText)
-     * */
     private String headerText;
     private String dataField;
-    private String textAlign;
-    private String enabled;
-    private String required;
-    private String visible;
-    private String editable;
+    private String flexName;
+    private String sp;
+    private String programName;
+
+    public PairDTO() {
+    }
 
     public PairDTO(String typeOfColumn) {
         this.typeOfColumn = typeOfColumn;
     }
-
-    public PairDTO(String typeOfColumn, String headerText, String dataField, String textAlign, String enabled, String required, String visible, String editable) {
+    public PairDTO(String typeOfColumn, String headerText, String dataField, String flexName, String programName) {
         this.typeOfColumn = typeOfColumn;
         this.headerText = headerText;
         this.dataField = dataField;
-        this.textAlign = textAlign;
-        this.enabled = enabled;
-        this.required = required;
-        this.visible = visible;
-        this.editable = editable;
+        this.flexName = flexName;
+        this.programName = programName;
+    }
+
+    public PairDTO(String flexName, String sp, String programName) {
+        this.flexName = flexName;
+        this.sp = sp;
+        this.typeOfColumn = "SP용 쿼리";
+        this.programName = programName;
     }
 
     public String getTypeOfColumn() {
@@ -55,43 +51,27 @@ public class PairDTO {
         this.dataField = dataField;
     }
 
-    public String getTextAlign() {
-        return textAlign;
+    public String getFlexName() {
+        return flexName;
     }
 
-    public void setTextAlign(String textAlign) {
-        this.textAlign = textAlign;
+    public void setFlexName(String flexName) {
+        this.flexName = flexName;
     }
 
-    public String getEnabled() {
-        return enabled;
+    public String getSp() {
+        return sp;
     }
 
-    public void setEnabled(String enabled) {
-        this.enabled = enabled;
+    public void setSp(String sp) {
+        this.sp = sp;
     }
 
-    public String getRequired() {
-        return required;
+    public String getProgramName() {
+        return programName;
     }
 
-    public void setRequired(String required) {
-        this.required = required;
-    }
-
-    public String getVisible() {
-        return visible;
-    }
-
-    public void setVisible(String visible) {
-        this.visible = visible;
-    }
-
-    public String getEditable() {
-        return editable;
-    }
-
-    public void setEditable(String editable) {
-        this.editable = editable;
+    public void setProgramName(String programName) {
+        this.programName = programName;
     }
 }
